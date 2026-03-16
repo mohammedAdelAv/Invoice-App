@@ -1,1 +1,294 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap');
+/* =========================
+   GLOBAL COLOR SYSTEM
+   ========================= */
+
+:root {
+  /* ========= PRIMARY ========= */
+  --color-primary: #7c5dfa;
+  --color-primary-light: #9277ff;
+
+  /* ========= STATUS COLORS ========= */
+  --color-success: #33d69f;
+  --color-danger: #ec5757;
+  --color-danger-light: #ff9797;
+  --color-warning: #ff8f00;
+
+  /* ========= BACKGROUND ========= */
+  --bg-main: #f8f8fb;
+  --bg-card: #ffffff;
+  --bg-sidebar: #373b53;
+
+  /* ========= TEXT ========= */
+  --text-primary: #0c0e16;
+  --text-secondary: #7e88c3;
+  --text-muted: #888eb0;
+
+  /* ========= UI COLORS ========= */
+  --border-color: #dfe3fa;
+
+  /* ========= BUTTONS ========= */
+  --btn-primary-bg: #7c5dfa;
+  --btn-primary-hover: #9277ff;
+
+  --btn-danger-bg: #ec5757;
+  --btn-danger-hover: #ff9797;
+
+  --btn-secondary-bg: #f9fafe;
+  --btn-secondary-text: #7e88c3;
+
+  /* Font Family */
+  --font-main: 'League Spartan', sans-serif;
+
+  /* Font Weights */
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  /* Heading Sizes */
+  --fs-heading-l: 36px;
+  --fs-heading-m: 24px;
+  --fs-heading-s: 15px;
+
+  /* Body Sizes */
+  --fs-body: 13px;
+  --fs-body-small: 12px;
+
+  /* Line Heights */
+  --lh-heading-l: 33px;
+  --lh-heading-m: 22px;
+  --lh-heading-s: 24px;
+
+  --lh-body: 18px;
+  --lh-body-small: 15px;
+}
+
+/* =========================
+   DARK THEME
+   ========================= */
+
+.dark-theme {
+  /* ========= BACKGROUND ========= */
+  --bg-main: #141625;
+  --bg-card: #1e2139;
+  --bg-sidebar: #1e2139;
+
+  /* ========= TEXT ========= */
+  --text-primary: #ffffff;
+  --text-secondary: #dfe3fa;
+  --text-muted: #888eb0;
+
+  /* ========= UI ========= */
+  --border-color: #252945;
+
+  /* ========= BUTTONS ========= */
+  --btn-secondary-bg: #252945;
+  --btn-secondary-text: #dfe3fa;
+}
+
+/* =========================
+   GLOBAL ELEMENTS
+   ========================= */
+
+body {
+  min-height: 100vh;
+  background: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.border {
+  border: 1px solid var(--border-color);
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+/* BASE BUTTON */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 12px 18px;
+
+  border-radius: 24px;
+  border: none;
+
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: var(--fw-bold);
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+/* Button 1 (New Invoice) */
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-light);
+}
+
+/* Button Icon */
+
+.btn-icon {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  background: white;
+  color: var(--color-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Button 2 (Mark as Paid) */
+
+.btn-success {
+  background: var(--color-success);
+  color: white;
+}
+
+.btn-success:hover {
+  opacity: 0.85;
+}
+
+/* Button 3 (Edit) */
+.btn-edit {
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+}
+
+.btn-edit:hover {
+  opacity: 0.85;
+}
+
+/* Button 4 (Save as Draft) */
+
+.btn-draft {
+  background: #373b53;
+  color: white;
+}
+
+.btn-draft:hover {
+  background: #0c0e16;
+}
+
+/* Button 5 (Delete) */
+
+.btn-danger {
+  background: var(--color-danger);
+  color: white;
+}
+
+.btn-danger:hover {
+  background: var(--color-danger-light);
+}
+
+/* Button 6 (Add New Item) */
+
+.btn-add-item {
+  width: 100%;
+
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+}
+
+.btn-add-item:hover {
+  opacity: 0.9;
+}
+
+/* =========================
+   TEXT UTILITIES
+   ========================= */
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+/* =========================
+   LAYOUT
+   ========================= */
+
+.sidebar {
+  background: var(--bg-sidebar);
+  color: white;
+}
+
+.container-card {
+  background: var(--bg-card);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* =========================
+   Heading Styles
+   ========================= */
+
+.heading-l {
+  font-size: var(--fs-heading-l);
+  line-height: var(--lh-heading-l);
+  font-weight: var(--fw-bold);
+  letter-spacing: -1px;
+}
+
+.heading-m {
+  font-size: var(--fs-heading-m);
+  line-height: var(--lh-heading-m);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.75px;
+}
+
+.heading-s {
+  font-size: var(--fs-heading-s);
+  line-height: var(--lh-heading-s);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.25px;
+}
+
+/* =========================
+   Body Text Styles
+   ========================= */
+
+.body-text {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-medium);
+}
+
+.body-text-small {
+  font-size: var(--fs-body-small);
+  line-height: var(--lh-body-small);
+  font-weight: var(--fw-medium);
+}
